@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стоп-прокрастинация — цифровой ресурс психолога</title>
+<style>
+:root{
+  --bg:#f6f7fb;--card:#fff;--text:#202437;--muted:#687087;
+  --accent:#6c63ff;--accent2:#8f88ff;--green:#35a879;--yellow:#e6a52b;--red:#e45b68;
+  --shadow:0 10px 30px rgba(35,40,75,.08);--radius:22px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #eceef5}
+.nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+.logo{font-weight:800;color:var(--accent);font-size:19px}.links{display:flex;gap:18px;flex-wrap:wrap}
+.links a{text-decoration:none;color:#4d5367;font-size:14px}.links a:hover{color:var(--accent)}
+.hero{max-width:1100px;margin:34px auto 20px;padding:28px 22px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}
+.hero h1{font-size:52px;line-height:1.05;margin:0 0 16px}.hero p{font-size:18px;color:var(--muted);max-width:650px}
+.badge{display:inline-block;background:#eceaff;color:#5148df;padding:8px 13px;border-radius:999px;font-weight:700;font-size:13px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+button,.btn{border:0;border-radius:14px;padding:12px 18px;font-weight:700;cursor:pointer;font-size:15px}
+.primary{background:var(--accent);color:white}.secondary{background:#ebeafe;color:#5148df}
+.hero-card{background:linear-gradient(145deg,#7068ff,#9b95ff);color:#fff;border-radius:30px;padding:28px;box-shadow:var(--shadow)}
+.hero-card .emoji{font-size:58px}.hero-card h3{font-size:25px;margin:10px 0}.hero-card p{color:#f1f0ff;font-size:15px}
+section{max-width:1100px;margin:22px auto;padding:20px 22px}
+h2{font-size:31px;margin:0 0 8px}.subtitle{color:var(--muted);margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--card);padding:22px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.card h3{margin-top:0}.icon{font-size:30px}.small{font-size:13px;color:var(--muted)}
+.reasons .card{cursor:pointer;transition:.2s}.reasons .card:hover{transform:translateY(-3px)}
+.test{background:#fff;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.progress{height:9px;background:#eceef5;border-radius:99px;overflow:hidden;margin:12px 0 22px}.progress span{display:block;height:100%;background:var(--accent);width:0}
+.question{font-size:20px;font-weight:750;margin-bottom:16px}
+.answers{display:grid;gap:10px}.answers button{text-align:left;background:#f3f4f9;color:var(--text);font-weight:600}.answers button:hover{background:#ebeafe}
+.result{display:none;margin-top:20px;padding:20px;border-radius:18px;background:#f5f4ff}.result h3{margin-top:0}
+.exercise{display:flex;justify-content:space-between;gap:20px;align-items:center}.exercise input{padding:12px;border:1px solid #ddd;border-radius:12px;width:100%}
+.timer{text-align:center;background:#fff;border-radius:var(--radius);padding:30px;box-shadow:var(--shadow)}#time{font-size:64px;font-weight:800;letter-spacing:2px;margin:10px}
+.timer-status{color:var(--muted);font-weight:600}
+.checklist label{display:block;padding:12px 0;border-bottom:1px solid #eee}.checklist input{margin-right:10px}
+.stat{font-size:38px;font-weight:800;color:var(--accent)}footer{margin-top:40px;background:#202437;color:#fff;padding:30px 22px;text-align:center}footer p{color:#c8cad5;font-size:13px}
+.notice{background:#fff8e8;border-left:4px solid var(--yellow);padding:14px 16px;border-radius:10px;color:#665329;font-size:14px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.hero h1{font-size:40px}.grid,.grid2{grid-template-columns:1fr}.links{display:none}.exercise{flex-direction:column;align-items:stretch}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav">
+    <div class="logo">🧠 Стоп-прокрастинация</div>
+    <div class="links">
+      <a href="#test">Диагностика</a><a href="#reasons">Причины</a><a href="#practice">Упражнения</a><a href="#timer">Таймер</a><a href="#progress">Прогресс</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <span class="badge">Цифровой ресурс психолога</span>
+    <h1>Меньше откладывать.<br>Больше делать.</h1>
+    <p>Интерактивный учебно-психологический ресурс для студентов: самопроверка, упражнения, фокус-таймер и простые инструменты для работы с прокрастинацией.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#test">Пройти диагностику</a>
+      <a class="btn secondary" href="#practice">Попробовать упражнение</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="emoji">🎯</div>
+    <h3>Начни с одного шага</h3>
+    <p>Не обязательно сделать всё сразу. Выбери одну небольшую задачу и начни с пяти минут.</p>
+  </div>
+</header>
+
+<section>
+  <h2>Что такое прокрастинация?</h2>
+  <p class="subtitle">Это не просто «лень». Часто за откладыванием стоят эмоции, тревога, сложность задачи или отсутствие понятного плана.</p>
+  <div class="grid">
+    <div class="card"><div class="icon">😰</div><h3>Тревога</h3><p>«А вдруг я не справлюсь?» — и начало задачи откладывается.</p></div>
+    <div class="card"><div class="icon">🧩</div><h3>Сложность</h3><p>Большая задача кажется настолько сложной, что проще её не начинать.</p></div>
+    <div class="card"><div class="icon">📱</div><h3>Отвлечения</h3><p>Телефон, соцсети и другие стимулы постоянно переключают внимание.</p></div>
+  </div>
+</section>
+
+<section id="test">
+  <h2>🧠 Мини-тест</h2>
+  <p class="subtitle">Ответь на 8 вопросов и получи ориентировочный результат.</p>
+  <div class="test">
+    <div id="qnum"></div>
+    <div class="progress"><span id="bar"></span></div>
+    <div class="question" id="question"></div>
+    <div class="answers" id="answers"></div>
+    <div class="result" id="result"></div>
+  </div>
+  <p class="small">Важно: тест является учебным скрининговым инструментом и не заменяет профессиональную психологическую диагностику.</p>
+</section>
+
+<section id="reasons">
+  <h2>🔍 Почему я откладываю?</h2>
+  <p class="subtitle">Нажми на карточку, чтобы увидеть возможное объяснение.</p>
+  <div class="grid reasons">
+    <div class="card" onclick="showReason('perfection')"><div class="icon">⭐</div><h3>Перфекционизм</h3><p>«Нужно сделать идеально».</p></div>
+    <div class="card" onclick="showReason('fear')"><div class="icon">😟</div><h3>Страх ошибки</h3><p>«Если не получится — будет плохо».</p></div>
+    <div class="card" onclick="showReason('fatigue')"><div class="icon">😴</div><h3>Усталость</h3><p>Ресурса сейчас недостаточно.</p></div>
+    <div class="card" onclick="showReason('plan')"><div class="icon">🗺️</div><h3>Нет плана</h3><p>Непонятно, с чего начать.</p></div>
+    <div class="card" onclick="showReason('motivation')"><div class="icon">🔥</div><h3>Нет мотивации</h3><p>Задача не вызывает интереса.</p></div>
+    <div class="card" onclick="showReason('phone')"><div class="icon">📲</div><h3>Отвлекающие факторы</h3><p>Телефон забирает внимание.</p></div>
+  </div>
+  <div id="reasonBox" class="card" style="margin-top:18px;display:none"></div>
+</section>
+
+<section id="practice">
+  <h2>🛠️ Практика</h2>
+  <p class="subtitle">Выбери один инструмент и попробуй применить его прямо сейчас.</p>
+  <div class="grid2">
+    <div class="card">
+      <h3>Правило 5 минут</h3>
+      <p>Выбери задачу и обещай себе заниматься ей только пять минут. Часто начало оказывается самым сложным.</p>
+      <div class="exercise"><input id="task" placeholder="Например: начать курсовую"><button class="primary" onclick="startFive()">Начать 5 минут</button></div>
+      <p id="fiveMsg" class="small"></p>
+    </div>
+    <div class="card">
+      <h3>Разбей задачу</h3>
+      <p>Вместо «подготовить работу» запиши первый конкретный шаг.</p>
+      <div class="exercise"><input id="step" placeholder="Мой первый шаг..."><button class="secondary" onclick="saveStep()">Сохранить</button></div>
+      <p id="stepMsg" class="small"></p>
+    </div>
+  </div>
+</section>
+
+<section id="timer">
+  <h2>⏱️ Фокус-таймер</h2>
+  <p class="subtitle">25 минут работы → 5 минут отдыха.</p>
+  <div class="timer">
+    <div id="time">25:00</div>
+    <div class="timer-status" id="timerStatus">Готов к работе</div>
+    <div class="buttons" style="justify-content:center">
+      <button class="primary" onclick="startTimer()">Старт</button>
+      <button class="secondary" onclick="pauseTimer()">Пауза</button>
+      <button class="secondary" onclick="resetTimer()">Сброс</button>
+    </div>
+  </div>
+</section>
+
+<section id="progress">
+  <h2>📈 Мой прогресс</h2>
+  <p class="subtitle">Отмечай небольшие действия — так проще видеть реальные изменения.</p>
+  <div class="grid2">
+    <div class="card checklist">
+      <label><input type="checkbox" onchange="updateProgress()">Начал задачу без долгого откладывания</label>
+      <label><input type="checkbox" onchange="updateProgress()">Работал 25 минут без отвлечений</label>
+      <label><input type="checkbox" onchange="updateProgress()">Убрал телефон во время работы</label>
+      <label><input type="checkbox" onchange="updateProgress()">Разбил большую задачу на шаги</label>
+      <label><input type="checkbox" onchange="updateProgress()">Сделал запланированный перерыв</label>
+    </div>
+    <div class="card">
+      <div class="stat" id="progressValue">0%</div>
+      <h3>Выполнено сегодня</h3>
+      <p>Небольшие регулярные действия помогают формировать более устойчивую привычку начинать задачи вовремя.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📚 Полезные материалы</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🎧</div><h3>Аудио-пауза</h3><p>2 минуты спокойного дыхания перед началом сложной задачи.</p></div>
+    <div class="card"><div class="icon">🎥</div><h3>Мини-лекция</h3><p>«Почему мы откладываем дела и как начать действовать».</p></div>
+    <div class="card"><div class="icon">📄</div><h3>Памятка</h3><p>7 простых способов уменьшить прокрастинацию у студентов.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="notice"><b>Психологическая безопасность:</b> ресурс предназначен для профилактики и психологического просвещения. При выраженной тревоге, депрессивных симптомах или длительных трудностях рекомендуется обратиться к специалисту.</div>
+</section>
+
+<footer>
+  <b>«Стоп-прокрастинация»</b>
+  <p>Учебный прототип цифрового ресурса психолога · психопрофилактическая и просветительская деятельность</p>
+</footer>
+
+<script>
+const questions=[
+"Я откладываю учебные задания до последнего момента.",
+"Мне трудно начать задачу, даже если я понимаю её важность.",
+"Я часто отвлекаюсь на телефон или социальные сети во время работы.",
+"Если задача кажется сложной, я предпочитаю заняться чем-нибудь другим.",
+"Я жду подходящего настроения, чтобы начать работу.",
+"Из-за откладывания мне приходится выполнять задания в спешке.",
+"Я переживаю из-за результата и поэтому иногда избегаю начала.",
+"После откладывания я часто испытываю чувство вины."
+];
+const opts=["Никогда","Редко","Иногда","Часто","Почти всегда"];
+let qi=0, score=0;
+function renderQ(){
+ document.getElementById('qnum').textContent=`Вопрос ${qi+1} из ${questions.length}`;
+ document.getElementById('question').textContent=questions[qi];
+ document.getElementById('bar').style.width=(qi/questions.length*100)+'%';
+ const a=document.getElementById('answers');a.innerHTML='';
+ opts.forEach((o,i)=>{let b=document.createElement('button');b.textContent=o;b.onclick=()=>answer(i);a.appendChild(b)});
+}
+function answer(i){
+ score+=i;qi++;
+ if(qi<questions.length) renderQ(); else finishTest();
+}
+function finishTest(){
+ document.getElementById('bar').style.width='100%';
+ document.getElementById('question').style.display='none';
+ document.getElementById('answers').style.display='none';
+ document.getElementById('qnum').textContent='Тест завершён';
+ let r=document.getElementById('result');r.style.display='block';
+ let title,text;
+ if(score<=10){title="🟢 Низкая выраженность";text="Прокрастинация, вероятно, не является для вас выраженной проблемой. Сохраняйте привычку планировать задачи и начинать их небольшими шагами."}
+ else if(score<=23){title="🟡 Умеренная выраженность";text="Вы периодически откладываете задачи. Полезно обратить внимание на причины откладывания и использовать таймер, дробление задач и правило 5 минут."}
+ else{title="🔴 Высокая выраженность";text="Откладывание заметно влияет на выполнение задач. Попробуйте регулярно использовать упражнения ресурса и, при необходимости, обсудите трудности с психологом."}
+ r.innerHTML=`<h3>${title}</h3><p>${text}</p><b>Ваш балл: ${score} из 32</b><br><button class="secondary" style="margin-top:12px" onclick="location.reload()">Пройти заново</button>`;
+}
+renderQ();
+
+function showReason(type){
+ const data={
+ perfection:["⭐ Перфекционизм","Попробуй заменить требование «сделать идеально» на «сделать достаточно хорошо». Первый черновик не обязан быть идеальным."],
+ fear:["😟 Страх ошибки","Сформулируй задачу как эксперимент: «Я попробую сделать первый шаг и посмотрю, что получится»."],
+ fatigue:["😴 Усталость","Иногда откладывание сигнализирует о недостатке ресурсов. Сначала восстановись: вода, короткая пауза, сон — затем небольшая задача."],
+ plan:["🗺️ Нет плана","Спроси себя: «Какое самое маленькое действие я могу выполнить прямо сейчас?»"],
+ motivation:["🔥 Нет мотивации","Не всегда нужно ждать мотивацию. Часто действие появляется раньше мотивации — начни с 5 минут."],
+ phone:["📲 Отвлекающие факторы","Убери телефон из поля зрения, отключи уведомления и оставь один источник информации для текущей задачи."]
+ };
+ const b=document.getElementById('reasonBox');b.style.display='block';b.innerHTML=`<h3>${data[type][0]}</h3><p>${data[type][1]}</p>`;
+}
+function startFive(){
+ const t=document.getElementById('task').value.trim()||'выбранную задачу';
+ document.getElementById('fiveMsg').textContent=`Отлично. Сейчас твоя задача — заниматься «${t}» всего 5 минут. Начни с самого маленького шага.`;
+}
+function saveStep(){
+ const s=document.getElementById('step').value.trim();
+ document.getElementById('stepMsg').textContent=s?`Первый шаг записан: «${s}». Теперь просто начни его.`:'Сначала запиши конкретное действие.';
+}
+let secs=1500, interval=null;
+function updateTime(){let m=Math.floor(secs/60),s=secs%60;document.getElementById('time').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function startTimer(){
+ if(interval)return;
+ document.getElementById('timerStatus').textContent='Работаем. Убери отвлечения.';
+ interval=setInterval(()=>{if(secs>0){secs--;updateTime()}else{clearInterval(interval);interval=null;document.getElementById('timerStatus').textContent='Время вышло! Сделай 5 минут отдыха.'}},1000);
+}
+function pauseTimer(){clearInterval(interval);interval=null;document.getElementById('timerStatus').textContent='Пауза'}
+function resetTimer(){clearInterval(interval);interval=null;secs=1500;updateTime();document.getElementById('timerStatus').textContent='Готов к работе'}
+function updateProgress(){
+ const c=[...document.querySelectorAll('.checklist input')];const done=c.filter(x=>x.checked).length;
+ document.getElementById('progressValue').textContent=Math.round(done/c.length*100)+'%';
+}
+</script>
+</body>
+</html>
